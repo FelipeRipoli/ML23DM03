@@ -6,6 +6,8 @@ import androidx.room.RoomDatabase
 
 @androidx.room.Database(entities = [Pessoa::class], version = 1)
 abstract class Database: RoomDatabase() {
+    abstract fun pessoaDAO(): PessoaDAO
+
     companion object{
         private var database: Database? = null
         private var DATABASE = "BDNOMES"
